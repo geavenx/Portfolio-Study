@@ -6,7 +6,6 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 region = input('(br, euw, eune, na, oce, kr)\nRegion: ')
 nickname = input('Nickname: ')
 
-
 url = f'https://www.op.gg/summoners/{region}/{nickname}'
 page = requests.get(url, headers=headers)
 
