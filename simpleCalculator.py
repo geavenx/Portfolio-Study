@@ -60,5 +60,4 @@ buttonThree = Button(buttonFrame, text='3', fg='black', width=10, height=3, bd=0
 
 buttonZero = Button(buttonFrame, text='0', fg='black', width=32, height=3, bd=0, bg='#eee', cursor='hand2', command= lambda: buttonClick(0)).grid(row=4, column=0, pady=1, padx=1, columnspan=3)
 
-
 root.mainloop()
