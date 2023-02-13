@@ -11,6 +11,8 @@ numbers = list(string.digits)
 specialCharacters = list('!@#%&*()`¨^')
 
 # função obter
+
+
 def obter():
     lenghtUppercase = int(uppercaseEntry.get())
     lenghtLowercase = int(lowercaseEntry.get())
