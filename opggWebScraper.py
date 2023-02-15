@@ -27,7 +27,7 @@ class opggScraper:
         for champ in championBox:
             championName = champ.find('div', class_="name")
             mostPlayedList.append(championName.text)
-
+            
         print(f'SoloQueue rank: {soloRank.text}')
         print(f'SoloQueue LP: {soloRankLp.text}')
         print(f'Global ladder rank: {ladderRank.text.strip()}')
