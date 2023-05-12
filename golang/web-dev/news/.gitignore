@@ -1,2 +1,4 @@
 # dotenv ignore
 .env
+
+/tmp/*
