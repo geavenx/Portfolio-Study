@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News app demo</title>
+    <link href="/assets/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="/" class="logo">News App</a>
+        <form action="/search" method="GET">
+          <input 
+            type="search" 
+            name="q" 
+            value="{{ .Query }}"
+            autofocus
+            class="search-input"
+            placeholder="Enter a news topic"
+          />
+        </form>
+        <a 
+          href="https://github.com/geavenx/Portfolio-Study/tree/main/golang/web-dev/news-app"
+          class="button github-button">View on GitHub</a
+        >
+      </header>
+      <section class="container">
+        <div class="result-count">
+          {{ if .Results }}
+            {{ if (gt .Results.TotalResults 0) }}
+            <p>
+              About <strong>{{ .Results.TotalResults }}</strong> results were found.
+              You are on page <strong>{{ .CurrentPage }}</strong> of <strong>{{ .TotalPages }}</strong
+              >.
+            </p>
+            {{ else if (eq .Results.TotalResults 0) }}
+            <p>
+              No results found for your search: <strong>{{ .Query }}</strong
+              >.
+            </p>
+            {{ end }}
+          {{ end }}
+        </div>
+        <ul class="search-results">
+          {{ range.Results.Articles }}
+          <li class="news-article">
+            <div>
+              <a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
+                <h3 class="title">{{ .Title }}</h3>
+              </a>
+              <p class="description">{{ .Description }}</p>
+              <div class="metadata">
+                <p class="source"> {{ .Source.Name }}</p>
+                <time class="published-date">{{ .FormatPublishedDate }}</time>
+              </div>
+            </div>
+            <img class="article-image" src="{{ .URLToImage }}" />
+          </li>
+          {{ end }}
+        </ul>
+        <div class="pagination">
+          {{ if . }}
+            {{ if (gt .NextPage 2) }}
+          <a 
+            href="/search?q={{ .Query }}&page={{ .PreviousPage }}"
+            class="button previous-page"
+            >Previous</a
+          >
+          {{ end }}
+          {{ if (ne .IsLastPage true) }}
+          <a href="/search?q={{ .Query }}&page={{ .NextPage }}"
+          class="button next-page"
+          >Next</a
+          >
+          {{ end }}
+        {{ end }}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
