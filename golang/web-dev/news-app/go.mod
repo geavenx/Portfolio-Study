@@ -1,4 +1,4 @@
-module example.com/news
+module github.com/geavenx/news-app
 
 go 1.19
 

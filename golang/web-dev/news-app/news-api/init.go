@@ -1,4 +1,4 @@
-package newsApi
+package news
 
 import "net/http"
 

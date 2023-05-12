@@ -8,8 +8,8 @@ import (
   "html/template"
   "net/url"
   "time"
-
-  "cmd/news-api/"
+  
+  "github.com/geavenx/news-app/news"
   "github.com/joho/godotenv"
 )
 
