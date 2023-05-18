@@ -15,20 +15,20 @@
     </header>
 
     <form id="survey-form" name="survey-form">
-        <div class="form">
-            <label id="name-label" for="name">Name:</label>
+        <div class="container">
+            <label class="question_title" id="name-label" for="name">Name:</label>
             <input class="input" required type="text" name="name" id="name" placeholder="Enter your name...">
 
 
-            <label id="email-label" for="email">Email: </label>
+            <label class="question_title" id="email-label" for="email">Email: </label>
             <input class="input" required type="email" name="email" id="email" placeholder="Enter your email...">
 
 
-            <label for="number" id="number-label">Age:</label>
+            <label class="question_title" for="number" id="number-label">Age:</label>
             <input class="input" min="12" max="120" type="number" name="age" id="number" placeholder="Age...">
 
-            <label for="">Which option best describes your current role?</label>
-            <select id="dropdown" name="dropdown">
+            <label class="question_title" for="dropdown">Which option best describes your current role?</label>
+            <select class="input" id="dropdown" name="dropdown">
                 <option disabled selected value>Current role</option>
                 <option value="dropdown-1">Student</option>
                 <option value="dropdown-2">Fulltime job</option>
@@ -36,7 +36,7 @@
                 <option value="dropdown-4">Other</option>
             </select>
 
-            <label for="recommend">Would you recommend freeCodeCamp to a friend?</label>
+            <label class="question_title" for="recommend">Would you recommend freeCodeCamp to a friend?</label>
 
             <label for="recommend-yes" class="radio-button">
 
@@ -48,7 +48,7 @@
             <label for="recommend-maybe" class="radio-button"><input type="radio" name="recommend" id="recommend-maybe" value="recommend-maybe"><span class="radio"></span>Maybe...</label>
             <label for="recommend-no" class="radio-button"><input type="radio" name="recommend" id="recommend-no" value="recommend-no"><span class="radio"></span>No</label>
 
-            <label for="improve">What would you like to see improved?</label>
+            <label class="question_title" for="improve">What would you like to see improved?</label>
             <label for="frontend"><input type="checkbox" name="improve" id="frontend" value="frontend">Front-end Projects</label>
             <label for="backend"><input type="checkbox" name="improve" id="backend" value="backend">Back-end Projects</label>
             <label for="dataview"><input type="checkbox" name="improve" id="dataview" value="dataview">Data Visualization</label>
@@ -61,11 +61,10 @@
             <label for="forum"><input type="checkbox" name="improve" id="forum" value="forum">Forum</label>
             <label for="additional-courses"><input type="checkbox" name="improve" id="additional-courses" value="additional-courses">Additional Courses</label>
 
-            <label for="comments">Any Comments or Suggestions?
-                <textarea rows="5" cols="40" placeholder="Enter your comment/suggestion here..."></textarea>
-            </label>
+            <label class="question_title" for="comments">Any Comments or Suggestions?</label>
+                  <textarea class="input" placeholder="Enter your comment/suggestion here..."></textarea>
 
-            <input type="submit" id="submit" value="Submit">
+            <input class="submit-button" type="submit" id="submit" value="Submit">
 
         </div>
     </form>
