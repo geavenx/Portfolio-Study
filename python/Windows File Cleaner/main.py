@@ -42,7 +42,6 @@ class Cleaner():
         else:  
             print(" Failed to empty Recycle Bin. ")  
 
-
     def quit_program(self):
         print("-- quit_program called;\n")
         quit()
