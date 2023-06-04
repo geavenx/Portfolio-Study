@@ -8,7 +8,7 @@ class Cleaner():
     def __init__(self):
         while True:
             self.clean_temp_folder()
-            time.sleep(1800)
+            exit()
 
     def clean_temp_folder(self):
         print("-- clean_temp_folder called;\n")
