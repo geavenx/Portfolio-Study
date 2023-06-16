@@ -1,5 +1,4 @@
 import socket
-import select
 import sys
 from _thread import *
 
@@ -11,8 +10,6 @@ server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 # Checa se o número de argumentos fornecidos está correto
 if len(sys.argv) != 3:
-
-
     print("Correct usage: script, IP address, port number")
     exit()
 
@@ -37,7 +34,7 @@ def client_thread(conn, addr):
     
 
     # Envia uma conexão ao cliente
-    conn.send("Bem-vindo ao bate-papo!")
+    conn.send(bytes("Bem-vindo ao bate-papo!", "utf-8"))
 
     
     while True:
@@ -52,7 +49,7 @@ def client_thread(conn, addr):
                 message_to_send = f"<{addr[0]}> {message}"
 
                 # Printa a mensagem, e o endereço do usuário que enviou a mensagem
-                print(f"<{addr[0]}> {message}")
+                print(f"<{addr[0]}> {str(message, 'utf-8')}")
 
                 # Usa a função broadcast para enviar a mensagem a todos
                 broadcast(message_to_send, conn)
@@ -68,7 +65,7 @@ def broadcast(message, connection):
     for client in list_of_clients:
         if client != connection:
             try:
-                client.send(message)
+                client.send(bytes(message, "utf-8"))
             except:
                 client.close()
 
@@ -96,7 +93,7 @@ while True:
 
 
     # Cria uma thread para cada usuário que conectar
-    start_new_thread(clientthread, (conn, addr))
+    start_new_thread(client_thread, (conn, addr))
 
 conn.close()
 server.close()
