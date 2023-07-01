@@ -1,9 +1,14 @@
-SECRET_KEY = "mysecretkey"
+import os
 
-SQLALCHEMY_DATABASE_URI = "{SGBD}://{USUARIO}:{SENHA}@{HOST}/{DATABASE}".format(
-    SGBD="mysql+mysqlconnector",
-    USUARIO="root",
-    SENHA="19242626",
-    HOST="localhost",
-    DATABASE="jogoteca",
-)
+SECRET_KEY = 'alura'
+
+SQLALCHEMY_DATABASE_URI = \
+    '{SGBD}://{usuario}:{senha}@{servidor}/{database}'.format(
+        SGBD = 'mysql+mysqlconnector',
+        usuario = 'root',
+        senha = 'admin',
+        servidor = 'localhost',
+        database = 'jogoteca'
+    )
+
+UPLOAD_PATH = os.path.dirname(os.path.abspath(__file__)) + '/uploads'
