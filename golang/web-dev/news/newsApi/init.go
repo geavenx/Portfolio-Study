@@ -8,7 +8,6 @@ import (
 	"net/url"
 	"time"
 )
-
 type Article struct {
 	Source struct {
 		ID   interface{} `json: "id"`
