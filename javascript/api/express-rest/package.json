@@ -1,0 +1,27 @@
+{
+  "name": "minha-api",
+  "version": "1.0.0",
+  "description": "api rest com autenticação JWT e validações de ACL",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./api/index.js"
+  },
+  "keywords": [],
+  "author": "Vitor Donnangelo Cardoso",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "path": "^0.12.7",
+    "pg": "^8.11.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.32.1",
+    "sequelize-cli": "^6.6.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

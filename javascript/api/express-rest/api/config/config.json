@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "123",
+    "database": "development_node_api_rest",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "123",
+    "database": "test_node_api_rest",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "123",
+    "database": "production_node_api_rest",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
