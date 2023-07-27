@@ -47,7 +47,6 @@ class PermissionController {
             })
         }
     }
-    
     static async updatePermission(req, res) {
         try {
             const { id } = req.params;

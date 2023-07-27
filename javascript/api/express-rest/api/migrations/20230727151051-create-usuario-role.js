@@ -2,26 +2,26 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('roles_permissoes', {
+    await queryInterface.createTable('usuario_roles', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      role_id: {
+      usuario_id: {
         type: Sequelize.UUID,
         references: {
-          model: 'roles',
+          model: 'usuarios',
           key: 'id'
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      permissao_id: {
+      role_id: {
         type: Sequelize.UUID,
         references: {
-          model: 'permissoes',
+          model: 'roles',
           key: 'id'
         },
         onUpdate: 'CASCADE',
@@ -38,6 +38,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('roles_permissoes');
+    await queryInterface.dropTable('usuario_roles');
   }
 };

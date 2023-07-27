@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('usuarios_permissoes', {
+    await queryInterface.createTable('usuario_permissaos', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,8 +15,8 @@ module.exports = {
           model: 'usuarios',
           key: 'id'
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       permissao_id: {
         type: Sequelize.UUID,
@@ -24,8 +24,8 @@ module.exports = {
           model: 'permissoes',
           key: 'id'
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +38,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('usuarios_permissoes');
+    await queryInterface.dropTable('usuario_permissaos');
   }
 };

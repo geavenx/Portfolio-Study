@@ -10,16 +10,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      usuarios.belongsToMany(models.roles, {
-        through: 'usuarios_roles',
-        as: 'usuarios_roles',
-        foreignKey: 'usuario_id'
-      })
       usuarios.belongsToMany(models.permissoes, {
-        through: 'usuarios_permissoes',
-        as: 'usuarios_permissions',
+        through: models.usuario_permissao,
+        as: 'usuario_permissoes',
         foreignKey: 'usuario_id'
-      })
+      });
+      usuarios.belongsToMany(models.roles, {
+        through: models.usuario_role,
+        as: 'usuario_roles',
+        foreignKey: 'usuario_id'
+      });
     }
   }
   usuarios.init({
@@ -29,6 +29,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'usuarios',
+    defaultScope: {
+      attributes: { exclude: ['senha'] }
+    }
   });
   return usuarios;
 };
