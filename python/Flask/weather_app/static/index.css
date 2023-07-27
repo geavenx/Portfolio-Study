@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
+
+body {
+    background-color: royalblue;
+}
+
+h1 {
+ font-size: 40px;
+ font-family: 'Agdasima', sans-serif;
+}

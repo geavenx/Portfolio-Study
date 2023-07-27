@@ -44,7 +44,10 @@ class RoleController {
        const { id } = req.params;
        try {
             const role = await roleService.deleteRole(id);
-            res.status(200).send("Role successfully deleted")
+            res.status(200).send({
+                status: role,
+                message: "Role successfully deleted."
+            })
        } catch (err) {
             console.log(`Erro ao delear role: ${err.message}`)
             res.status(400).send({
@@ -61,6 +64,7 @@ class RoleController {
             const updatedRole = await roleService.updateRole(id, { nome, descricao });
             res.status(200).send({
                 message: "Role successfully updated.",
+                status: updatedRole,
                 new_data: {
                     nome: nome,
                     descricao: descricao

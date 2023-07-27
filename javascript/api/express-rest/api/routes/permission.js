@@ -6,8 +6,8 @@ const router = Router();
 router
     .post('/permissao', Controller.createPermission)
     .get('/permissao', Controller.getAllPermissions)
-    .get('/permissao/:id')
-    .delete('/permissao/:id')
-    .put('/permissao/:id')
+    .get('/permissao/:id', Controller.getPermissionById)
+    .delete('/permissao/:id', Controller.deletePermission)
+    .put('/permissao/:id', Controller.updatePermission)
 
 module.exports = router
