@@ -4,7 +4,26 @@ const { hash } = require('bcrypt');
 
 class Services{
     async getAllUsers() {
-        const users = await database.usuarios.findAll();
+        const users = await database.usuarios.findAll({
+            include: [
+                {
+                    model: database.roles,
+                    as: 'usuario_roles',
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
+                },
+                {
+                    model: database.permissoes,
+                    as: 'usuario_permissoes',
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
+                }
+            ]
+        });
 
         return users;
     }
