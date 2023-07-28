@@ -27,7 +27,7 @@ const roles = (listaRoles) => {
 		/* ----- criando um array com todas as roles cadastradas no usuário -----*/
 		const userRoles = user.usuario_roles
 			.map((role) => role.nome) // <-- retorna um array das roles do usuário;
-			.some((role) => listaRoles.includes(role)); // <-- verifica se o usuário tem a role;
+			.some((role) => listaRoles.includes(role)); // <-- verifica se o usuário tem a role passada para o middleware;
 
 		if (!userRoles) {
 			return res.status(401).send({ message: "User not authorized" })
