@@ -14,6 +14,16 @@ class SegurancaController {
             res.status(400).send({ message: err.message });
         }
     }
+    
+    static async createPermissionsRoles(req, res) {
+        const { roleId, permissoes } = req.body;
+        try{
+            const createdPermissions = await segurancaService.createPermissionsRoles({ roleId, permissoes });
+            res.status(200).send(createdPermissions);
+        } catch (err) {
+            res.status(400).send({ message: err.message });
+        }
+    }    
 }
 
 module.exports = SegurancaController;

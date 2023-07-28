@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     role_id: DataTypes.UUID
   }, {
     sequelize,
+    freezeTableName: true,
     modelName: 'usuario_role',
   });
   return usuario_role;
